@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "envFile": "${workspaceFolder}/dev.env",
+            "type": "node",
+            "request": "launch",
+            "runtimeVersion":"20.5.1",
+            "name": "Debug NestJS Application",
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
+            "args": [
+                "${workspaceFolder}/src/main.ts"
+            ],
+            "autoAttachChildProcesses": true,
+            "runtimeExecutable": "node",
+            "sourceMaps": true,
+            "env":{},
+            "timeout": 20000,
+            "outputCapture": "std"
+        }
+    ]
+}
