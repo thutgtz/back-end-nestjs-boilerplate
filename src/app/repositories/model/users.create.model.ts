@@ -1,6 +1,6 @@
 import { $Enums, users } from '@prisma/client'
 
-export class UserCreateModel implements users {
+export class UserReportModel {
   id: string
   hash_password: string
   created_at: Date

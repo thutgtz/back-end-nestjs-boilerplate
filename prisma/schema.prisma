@@ -9,12 +9,13 @@ datasource db {
 }
 
 model users {
-  id            String        @id @db.VarChar(50)
-  username      String        @db.VarChar(50)
-  hash_password String        @db.VarChar(255)
-  status        record_status @default(ACTIVE)
-  updated_at    DateTime      @db.Timestamp(6)
-  created_at    DateTime      @default(now()) @db.Timestamp(6)
+  id               String             @id @db.VarChar(50)
+  username         String             @db.VarChar(50)
+  hash_password    String             @db.VarChar(255)
+  status           record_status      @default(ACTIVE)
+  updated_at       DateTime           @db.Timestamp(6)
+  created_at       DateTime           @default(now()) @db.Timestamp(6)
+  user_permissions user_permissions[]
 
   @@unique([username])
 }
@@ -24,6 +25,7 @@ model user_permissions {
   permission String   @db.VarChar(50)
   updated_at DateTime @db.Timestamp(6)
   created_at DateTime @default(now()) @db.Timestamp(6)
+  users      users?   @relation(fields: [user_id], references: [id])
 
   @@id([user_id, permission])
 }
