@@ -17,12 +17,12 @@ export class UserService {
   ) {}
 
   async createUser(body: UserV1CreateReq): Promise<void> {
-    const isExist = await this.usersRepository.findOneByUsername(body.username)
+    const isExist = await this.usersRepository.findOneByCitizenId(body.citizenId)
     if (isExist) {
       throw new BussinessException('username already exist.')
     }
 
-    const newUser = new User(body.username, body.password)
+    const newUser = new User(body.name, body.password, body.citizenId)
     const defaultPermission = Permission.FromPermissionEnumArray([PermissionEnum.READ_RICH_MENU])
 
     await this.prismaService.$transaction(async (transaction) => {
@@ -40,6 +40,6 @@ export class UserService {
     const user = User.FromDb(isExist)
     user.updatePassword(body.password)
 
-    await this.usersRepository.createOne(user)
+    await this.usersRepository.updateOne(user)
   }
 }

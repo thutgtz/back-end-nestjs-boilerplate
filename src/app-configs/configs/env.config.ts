@@ -8,6 +8,7 @@ export class Configs {
   rootToken: string
   lineNotifyToken: string
   lineAccessToken: string
+  lineLoginChannelId: string
 }
 
 export const envConfiguration: ConfigFactory<Configs> = () => ({
@@ -18,4 +19,5 @@ export const envConfiguration: ConfigFactory<Configs> = () => ({
   lineAccessToken: process.env.LINE_ACCESS_TOKEN,
   jwtSecret: process.env.JWT_SECRET,
   rootToken: process.env.ROOT_TOKEN,
+  lineLoginChannelId: process.env.LINE_LOGIN_CHANNEL_ID,
 })

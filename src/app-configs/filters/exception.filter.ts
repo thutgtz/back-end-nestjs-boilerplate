@@ -3,7 +3,7 @@ import { HttpAdapterHost } from '@nestjs/core'
 import { Request } from 'express'
 import { CustomLogger } from '../../utilities/customLogger/custom-logger'
 import { BussinessException, CustomResponse, ResponseStatusCode } from '../interceptors/models/custom-response.model'
-import { LineNotiyService } from 'src/utilities/lineNotify/line-notify.service'
+import { LineNotiyService } from '../../utilities/lineNotify/line-notify.service'
 import { ValidationError } from 'class-validator'
 
 @Catch()

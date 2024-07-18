@@ -6,6 +6,8 @@ import { AuthenticationService } from '../app/services/authentication.service'
 import { JwtModule } from '@nestjs/jwt'
 import { PrismaModule } from '../utilities/prismaModule/prisma.module'
 import JWTConfiguration from '../app-configs/configs/jwt.config'
+import { UserLineRepository } from '../app/repositories/user-line.repository'
+import { LineAccessService } from '../app/external-services/line-access.service'
 
 @Module({
   imports: [
@@ -15,6 +17,6 @@ import JWTConfiguration from '../app-configs/configs/jwt.config'
     PrismaModule,
   ],
   controllers: [AuthenticationController],
-  providers: [AuthenticationService, UsersRepository, UserPermissionRepository],
+  providers: [AuthenticationService, LineAccessService, UsersRepository, UserPermissionRepository, UserLineRepository],
 })
 export class AuthenticationModule {}

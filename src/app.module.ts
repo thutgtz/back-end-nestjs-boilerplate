@@ -16,6 +16,7 @@ import { DevtoolsModule } from '@nestjs/devtools-integration'
 import { UserModule } from './modules/user.module'
 import { RootGuard } from './app-configs/guards/root.guard'
 import { HealthCheckModule } from './modules/health-check.module'
+import { ProductModule } from './modules/product.module'
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { HealthCheckModule } from './modules/health-check.module'
     AuthenticationModule,
     UserModule,
     HealthCheckModule,
+    ProductModule,
   ],
   providers: [
     CustomLogger,

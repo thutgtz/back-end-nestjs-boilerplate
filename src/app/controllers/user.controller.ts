@@ -4,7 +4,7 @@ import { SwaggerApiResponse } from '../../app-configs/decorators/response-swager
 import { UserService } from '../services/user.service'
 import { UserV1CreateReq } from './dto/user.v1-create.dto'
 import { UserV1UpdateReq } from './dto/user.v1-update.dto'
-import { RootOnly } from 'src/app-configs/decorators/root-only.decorator'
+import { RootOnly } from '../../app-configs/decorators/root-only.decorator'
 
 const prefix = 'user'
 

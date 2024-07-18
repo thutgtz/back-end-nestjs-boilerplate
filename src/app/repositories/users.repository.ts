@@ -6,9 +6,9 @@ import { User } from '../services/domain/user.domain'
 export class UsersRepository {
   constructor(private prismaService: PrismaService) {}
 
-  findOneByUsername(username: string, trasaction: Transaction = this.prismaService) {
+  findOneByCitizenId(citizenId: string, trasaction: Transaction = this.prismaService) {
     return trasaction.users.findFirst({
-      where: { username },
+      where: { citizen_id: citizenId },
     })
   }
 
