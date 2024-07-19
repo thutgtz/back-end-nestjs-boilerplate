@@ -23,7 +23,7 @@ export class User {
 
   static FromDb(users: Users): User {
     const user = new User('', '')
-    user.id = randomUUID()
+    user.id = users.id
     user.name = users.name
     user.createdAt = users.created_at
     user.updatedAt = users.updated_at
