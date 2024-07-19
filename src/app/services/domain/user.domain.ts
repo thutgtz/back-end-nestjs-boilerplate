@@ -22,7 +22,7 @@ export class User {
   }
 
   static FromDb(users: Users): User {
-    const user = new User(null, null)
+    const user = new User('', '')
     user.id = randomUUID()
     user.name = users.name
     user.createdAt = users.created_at
